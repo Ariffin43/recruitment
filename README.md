@@ -1,66 +1,449 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# E-Recruitment System
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Deskripsi Project
 
-## About Laravel
+E-Recruitment System merupakan aplikasi berbasis web yang dikembangkan untuk mendigitalisasi dan mengintegrasikan proses rekrutmen karyawan dalam satu sistem.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Sistem ini mendigitalisasi proses **Formulir Permintaan Tenaga Kerja (FPTK)** yang sebelumnya dapat dilakukan secara manual menjadi proses digital dengan alur pengajuan dan persetujuan yang lebih terstruktur. HOD dapat mengajukan kebutuhan tenaga kerja melalui FPTK, kemudian proses persetujuan dilakukan secara berjenjang oleh GM dan HRD sebelum lowongan pekerjaan dibuka.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Selain mendigitalisasi proses FPTK, sistem ini juga menyediakan proses rekrutmen yang terintegrasi mulai dari pendaftaran akun pelamar, pengelolaan profil, pengajuan lamaran, proses screening dan approval oleh HRD dan HOD, hingga penjadwalan interview.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Setiap proses memiliki status yang dapat dipantau oleh pengguna sesuai dengan role masing-masing. Hal ini memberikan transparansi terhadap perkembangan FPTK, lowongan pekerjaan dan lamaran yang sedang diproses.
 
-## Learning Laravel
+Sistem ini juga membantu mengurangi proses manual, meningkatkan efisiensi proses rekrutmen, meminimalkan risiko kehilangan informasi, serta memudahkan setiap pihak dalam memantau proses rekrutmen secara terstruktur.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+---
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## Fitur Sistem
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### FPTK
+* Pengajuan FPTK oleh HOD
+* Approval FPTK oleh GM
+* Approval FPTK oleh HRD
+* Pemantauan status FPTK
+* Pembuatan lowongan berdasarkan FPTK yang telah disetujui
 
-## Laravel Sponsors
+### Manajemen Lowongan
+* Pembuatan lowongan oleh HRD
+* Pembukaan lowongan berdasarkan FPTK yang telah disetujui
+* Pengaturan informasi lowongan
+* Pengelolaan status lowongan
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### Manajemen Akun Pelamar
+* Pendaftaran akun pelamar
+* Approval akun pelamar oleh HRD
+* Aktivasi akun setelah disetujui
+* Pelamar hanya dapat login setelah akun disetujui
 
-### Premium Partners
+### Profil Pelamar
+* Pengisian data profil pelamar
+* Pengisian informasi pribadi dan data pendukung
+* Pengunggahan dokumen persyaratan
+* Persentase kelengkapan profil
+* Pelamar wajib melengkapi profil hingga 100% sebelum mengajukan lamaran
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+### Lamaran Pekerjaan
+* Pengajuan lamaran ke lowongan yang sedang dibuka
+* Screening lamaran oleh HRD dan HOD
+* Approval lamaran oleh HRD dan HOD
+* Pemantauan status lamaran
 
-## Contributing
+### Interview
+* Pembuatan jadwal interview oleh HRD
+* Penentuan metode interview
+* Penentuan waktu dan lokasi atau link interview
+* Informasi jadwal interview pada halaman lamaran pelamar
+* Pengiriman informasi jadwal interview melalui email pelamar
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### Pemantauan Status
+Pengguna dapat memantau status proses sesuai dengan role dan aksesnya, seperti:
+* Status FPTK
+* Status lowongan
+* Status akun pelamar
+* Status lamaran
+* Status proses approval
+* Status jadwal interview
 
-## Code of Conduct
+---
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## Role Pengguna
 
-## Security Vulnerabilities
+### HRD
+HRD memiliki peran utama dalam pengelolaan proses rekrutmen.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+HRD dapat:
+* Mengelola data master (Departemen, Akun HOD dan Kualifikasi tiap departemen)
+* Melakukan approval akun pelamar
+* Melakukan approval lamaran
+* Mengirim lamaran kepada HOD untuk proses approval
+* Melakukan approval akhir setelah lamaran disetujui HOD
+* Membuat dan membuka lowongan berdasarkan FPTK yang telah disetujui
+* Membuat jadwal interview
+* Mengirimkan informasi jadwal interview kepada pelamar
+* Memantau proses rekrutmen
 
-## License
+---
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### HOD
+HOD berperan dalam mengajukan kebutuhan tenaga kerja dan melakukan proses approval kandidat.
+
+HOD dapat:
+* Mengajukan FPTK
+* Memantau status FPTK
+* Melakukan revisi terhadap FPTK apabila ada revisi
+* Melakukan approval terhadap kandidat yang telah lolos proses screening HRD
+
+---
+
+### GM
+GM berperan dalam melakukan persetujuan terhadap kebutuhan tenaga kerja yang diajukan oleh HOD.
+
+GM dapat:
+* Melihat FPTK yang diajukan oleh HOD
+* Menyetujui FPTK
+* Menolak FPTK
+* Mengembalikan FPTK untuk revisi apabila diperlukan
+* Memantau status pengajuan FPTK
+
+---
+
+### Pelamar
+Pelamar dapat:
+
+* Membuat akun
+* Melengkapi profil
+* Mengunggah dokumen persyaratan
+* Melihat lowongan yang sedang dibuka
+* Mengajukan lamaran
+* Melihat status lamaran
+* Melihat informasi jadwal interview
+* Menerima informasi jadwal interview melalui email
+
+---
+
+## Alur E-Recruitment
+
+### 1. HOD Mengajukan FPTK
+Proses rekrutmen dimulai ketika HOD mengajukan **Formulir Permintaan Tenaga Kerja (FPTK)**.
+FPTK berisi informasi mengenai kebutuhan tenaga kerja, seperti:
+* Departemen
+* Posisi yang dibutuhkan
+* Jumlah kebutuhan
+* Tanggal kebutuhan
+* Alasan kebutuhan tenaga kerja
+* Kualifikasi yang dibutuhkan
+
+Setelah FPTK diajukan, status FPTK menjadi Pending GM
+
+---
+
+### 2. GM Melakukan Approval FPTK
+GM melakukan review terhadap FPTK yang diajukan oleh HOD.
+GM dapat:
+* Menyetujui FPTK
+* Menolak FPTK
+* Meminta revisi FPTK
+
+Jika FPTK disetujui oleh GM, maka proses dilanjutkan ke HRD.
+
+---
+
+### 3. HRD Melakukan Approval FPTK
+Setelah FPTK disetujui oleh GM, HRD melakukan proses approval berikutnya.
+Jika HRD menyetujui FPTK, maka FPTK dianggap telah disetujui dan dapat digunakan sebagai dasar untuk membuka lowongan pekerjaan.
+
+---
+
+### 4. HRD Membuka Lowongan
+Setelah FPTK mendapatkan persetujuan, HRD dapat membuat dan membuka lowongan berdasarkan FPTK tersebut.
+Lowongan berisi informasi seperti:
+* Judul posisi
+* Departemen
+* Posisi yang dibutuhkan
+* Kualifikasi
+* Lokasi
+* Tipe pekerjaan
+* Periode lowongan
+
+Lowongan kemudian dapat dibuka agar dapat dilihat oleh pelamar.
+
+---
+
+### 5. Pelamar Mendaftarkan Akun
+Pelamar yang belum memiliki akun dapat melakukan pendaftaran.
+Setelah melakukan pendaftaran, akun pelamar belum dapat langsung digunakan untuk login.
+Akun akan memiliki status menunggu persetujuan HRD.
+
+---
+
+### 6. Pelamar Melengkapi Profil
+Sebelum dapat mengajukan lamaran, pelamar harus melengkapi profil hingga mencapai tingkat kelengkapan **100%**.
+Data yang perlu dilengkapi dapat mencakup:
+* Informasi pribadi
+* Informasi kontak
+* Alamat
+* Pendidikan
+* Pengalaman kerja
+* Dokumen pendukung
+
+Pelamar tidak dapat mengajukan lamaran apabila profil belum lengkap.
+
+---
+
+### 7. Pelamar Mengajukan Lamaran
+Setelah profil mencapai 100%, pelamar dapat memilih salah satu lowongan yang sedang dibuka dan mengajukan lamaran.
+
+Lamaran kemudian masuk ke dalam proses screening HRD.
+
+---
+
+### 8. HRD Melakukan Screening dan Approval
+HRD melakukan review terhadap lamaran yang dikirimkan oleh pelamar.
+HRD dapat:
+* Menyetujui lamaran
+* Menolak lamaran
+* Memberikan catatan terhadap lamaran
+
+Jika lamaran disetujui oleh HRD, maka lamaran diteruskan kepada HOD untuk proses berikutnya.
+
+---
+
+### 9. HOD Melakukan Approval Lamaran
+HOD melakukan review terhadap kandidat yang telah disetujui oleh HRD.
+HOD dapat:
+* Menyetujui kandidat
+* Menolak kandidat
+* Memberikan catatan
+
+Jika HOD menyetujui lamaran, maka lamaran dikembalikan kepada HRD untuk proses penjadwalan interview.
+
+---
+
+### 10. HRD Membuat Jadwal Interview
+Setelah lamaran disetujui oleh HOD, HRD dapat membuat jadwal interview.
+Informasi interview dapat meliputi:
+* Tanggal interview
+* Waktu interview
+* Metode interview
+* Lokasi interview untuk interview offline
+* Link interview untuk interview online
+
+Setelah jadwal interview dibuat, informasi interview akan ditampilkan pada halaman lamaran pelamar.
+Informasi jadwal interview juga akan dikirimkan melalui email pelamar.
+
+---
+
+## Informasi Jadwal Interview pada Halaman Pelamar
+Pada halaman **Lamaran**, pelamar dapat melihat daftar lamaran yang pernah diajukan.
+Setiap data lamaran memiliki informasi terkait proses lamaran.
+Pelamar juga dapat menekan icon informasi untuk melihat detail lebih lengkap mengenai lamaran.
+Informasi jadwal interview akan tersedia setelah HRD membuat jadwal interview.
+Detail tersebut dapat berisi:
+* Status lamaran
+* Posisi yang dilamar
+* Tanggal interview
+* Waktu interview
+* Metode interview
+* Lokasi interview atau link interview
+* Informasi tambahan lainnya
+
+---
+
+## Alur E-Recruitment Secara Keseluruhan
+
+┌─────────────────────┐
+│ HOD Mengajukan FPTK │
+└──────────┬──────────┘
+           │
+           ▼
+┌─────────────────────┐
+│ GM Approval FPTK    │
+└──────────┬──────────┘
+           │
+           ▼
+┌─────────────────────┐
+│ HRD Approval FPTK   │
+└──────────┬──────────┘
+           │
+           ▼
+┌─────────────────────┐
+│ HRD Membuka         │
+│ Lowongan            │
+└──────────┬──────────┘
+           │
+           ▼
+┌─────────────────────┐
+│ Pelamar Mendaftar   │
+│ Akun                │
+└──────────┬──────────┘
+           │
+           ▼
+┌─────────────────────┐
+│ HRD Approval Akun   │
+└──────────┬──────────┘
+           │
+           ▼
+┌─────────────────────┐
+│ Pelamar Login       │
+└──────────┬──────────┘
+           │
+           ▼
+┌─────────────────────┐
+│ Melengkapi Profil   │
+│ Hingga 100%         │
+└──────────┬──────────┘
+           │
+           ▼
+┌─────────────────────┐
+│ Pelamar Mengajukan  │
+│ Lamaran             │
+└──────────┬──────────┘
+           │
+           ▼
+┌─────────────────────┐
+│ HRD Approval        │
+│ Lamaran             │
+└──────────┬──────────┘
+           │
+           ▼
+┌─────────────────────┐
+│ HOD Approval        │
+│ Lamaran             │
+└──────────┬──────────┘
+           │
+           ▼
+┌─────────────────────┐
+│ HRD Membuat Jadwal  │
+│ Interview           │
+└──────────┬──────────┘
+           │
+           ▼
+┌─────────────────────┐
+│ Email & Informasi   │
+│ Interview Pelamar   │
+└─────────────────────┘
+
+---
+
+---
+## Instalasi Project
+
+### 1. Clone Repository
+git clone <repository-url>
+
+Masuk ke direktori project:
+cd e-recruitment
+
+---
+
+### 2. Install Dependency Laravel
+Install dependency PHP menggunakan Composer:
+composer install
+
+---
+
+### 3. Install Dependency Frontend
+Install dependency frontend menggunakan NPM:
+npm install
+
+---
+
+### 4. Konfigurasi Environment
+Salin file `.env.example` menjadi `.env`.
+
+Linux atau macOS:
+cp .env.example .env
+
+Windows:
+copy .env.example .env
+
+---
+
+### 5. Konfigurasi Database
+Buat database dengan nama:
+recruitment
+
+Kemudian sesuaikan konfigurasi database pada file `.env`:
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=recruitment
+DB_USERNAME=root
+DB_PASSWORD=
+
+Sesuaikan `DB_USERNAME` dan `DB_PASSWORD` dengan konfigurasi database lokal.
+
+---
+
+### 6. Generate Application Key
+php artisan key:generate
+
+---
+
+### 7. Menjalankan Migration dan Seeder
+Untuk membuat struktur database dan mengisi data awal:
+php artisan migrate:fresh --seed
+
+Perintah tersebut akan:
+* Menghapus tabel yang sudah ada
+* Menjalankan seluruh migration
+* Mengisi data awal melalui `DatabaseSeeder`
+
+---
+
+### 8. Membuat Symbolic Link Storage
+Untuk mengakses file atau dokumen yang disimpan pada storage Laravel:
+php artisan storage:link
+
+---
+
+## Seeder dan Akun Login
+Seeder menyediakan akun demo untuk setiap role dalam sistem.
+Semua akun menggunakan password:
+12341234
+
+| Role    | Email               | Password   |
+| ------- | ------------------- | ---------- |
+| HRD     | `hrd@gmail.com`     | `12341234` |
+| HOD     | `hod@gmail.com`     | `12341234` |
+| GM      | `gm@gmail.com`      | `12341234` |
+| Pelamar | `pelamar@gmail.com` | `12341234` |
+
+---
+
+## Cara Menjalankan Project
+
+Project menggunakan Laravel sebagai backend dan Vite sebagai frontend asset bundler.
+
+* Jalankan server Laravel:
+php artisan serve
+
+* Kemudian jalankan Vite pada terminal lain:
+npm run dev
+
+Setelah kedua proses berjalan, project dapat diakses melalui alamat yang ditampilkan oleh Laravel.
+http://127.0.0.1:8000
+
+---
+
+## Perintah Development
+
+### Menjalankan Laravel
+php artisan serve
+
+### Menjalankan Vite
+npm run dev
+
+### Menjalankan Migration
+php artisan migrate
+
+### Menjalankan Seeder
+php artisan db:seed
+
+### Reset Database dan Seeder
+php artisan migrate:fresh --seed
+
+### Membuat Storage Link
+php artisan storage:link
+
+---

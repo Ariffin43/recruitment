@@ -193,7 +193,7 @@
 
                 {{-- FOOTER LINK --}}
                 <p class="text-sm text-gray-500">
-                    Belum punya akun?
+                    Sudah punya akun?
                     <a href="/login" class="text-blue-600 font-medium hover:underline">
                         Masuk di sini
                     </a>
