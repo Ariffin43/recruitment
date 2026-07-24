@@ -251,6 +251,7 @@ Detail tersebut dapat berisi:
 
 ## Alur E-Recruitment Secara Keseluruhan
 
+```text
 ┌─────────────────────┐
 │ HOD Mengajukan FPTK │
 └──────────┬──────────┘
@@ -322,6 +323,7 @@ Detail tersebut dapat berisi:
 │ Email & Informasi   │
 │ Interview Pelamar   │
 └─────────────────────┘
+```
 
 ---
 
