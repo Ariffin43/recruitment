@@ -363,7 +363,7 @@ copy .env.example .env
 
 ### 5. Konfigurasi Database
 Buat database dengan nama:
-recruitment
+e-recruitment
 
 Kemudian sesuaikan konfigurasi database pada file `.env`:
 DB_CONNECTION=mysql
