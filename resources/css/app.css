@@ -1,0 +1,24 @@
+@import "tailwindcss";
+@import "bootstrap-icons/font/bootstrap-icons.css";
+
+:root{
+  --brand-blue: #145D9E;
+  --brand-sky: #B8E6FE;
+  --brand-purple: #DDD6FF;
+  --brand-orange: #FFD7A7;
+}
+
+.sidebar-link {
+    padding: 12px;
+    border-radius: 12px;
+    color: #4b5563;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.sidebar-link.active {
+    background: rgba(20, 93, 158, 0.1);
+    color: #145D9E;
+    font-weight: 600;
+}
